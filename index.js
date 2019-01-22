@@ -14,7 +14,7 @@ require("dotenv").config();
 
 // serves static files from build folder
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 ///////// GET Businesses ///////////
 
@@ -57,7 +57,7 @@ app.post('/getbusinessreviews', (req, res) => {
 // catch all endpoint 
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.listen(PORT, (err) => {

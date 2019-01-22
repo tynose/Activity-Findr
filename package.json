@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "heroku-postbuild": "cd client && yarn && yarn run build",
     "start": "node index.js"

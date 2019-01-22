@@ -17,6 +17,6 @@
     "rapidapi-connect": "0.0.6"
   },
   "devDependencies": {
-    "nodemon": "^1.18.6"
+    "nodemon": "^1.18.9"
   }
 }

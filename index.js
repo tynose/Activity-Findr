@@ -33,6 +33,9 @@ app.post('/getbusinesses', (req, res)=>{
     });
 });
 
+app.get('/results', (req, res) =>{
+    res.json(businesses);
+});
 
 ///////// GET Businesses Reviews ///////////
 
@@ -49,10 +52,6 @@ app.post('/getbusinessreviews', (req, res) => {
         console.error(payload);
     });
 })
-
-app.get('/results', (req, res) =>{
-    res.json(businesses);
-});
 
 // catch all endpoint 
 

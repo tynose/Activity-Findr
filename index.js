@@ -14,7 +14,6 @@ require("dotenv").config();
 
 // serves static files from build folder
 
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 ///////// GET Businesses ///////////
 
@@ -34,31 +33,34 @@ app.post('/getbusinesses', (req, res)=>{
     });
 });
 
-app.get('/results', (req, res) =>{
-    res.json(businesses);
-});
 
 ///////// GET Businesses Reviews ///////////
 
 app.post('/getbusinessreviews', (req, res) => {
     rapid
-      .call("YelpAPI", "getBusinessReviews", {
+    .call("YelpAPI", "getBusinessReviews", {
         accessToken: process.env.RAPID_API_KEY,
         ...req.body
-      })
-      .on("success", payload => {
+    })
+    .on("success", payload => {
         res.json(payload);
-      })
-      .on("error", payload => {
+    })
+    .on("error", payload => {
         console.error(payload);
-      });
+    });
 })
+
+app.get('/results', (req, res) =>{
+    res.json(businesses);
+});
 
 // catch all endpoint 
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.listen(PORT, (err) => {
     if (err) {

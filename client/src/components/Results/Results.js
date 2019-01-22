@@ -36,6 +36,8 @@ class Results extends Component {
     .then(response => response.json())
     .then((data) => {       
       if (data.businesses[0]){
+        console.log(data);
+        
       this.setState({
         formData: data,
         isData: true

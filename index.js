@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const RapidAPI = require('rapidapi-connect');
+const path = require('path');
 const app = express();
 const cors = require('cors')
 const PORT = process.env.PORT || 8080;
@@ -10,6 +11,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 require("dotenv").config();
+
+// serves static files from build folder
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 ///////// GET Businesses ///////////
 
@@ -49,7 +54,11 @@ app.post('/getbusinessreviews', (req, res) => {
       });
 })
 
-////////////////////////////////////////////
+// catch all endpoint 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 app.listen(PORT, (err) => {
     if (err) {

@@ -32,7 +32,7 @@ class Results extends Component {
   }
   
   componentDidMount() {
-    fetch('http://localhost:8080/results')
+    fetch('/results')
     .then(response => response.json())
     .then((data) => {       
       if (data.businesses[0]){

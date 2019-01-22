@@ -25,7 +25,7 @@ export default class App extends Component {
       }
     };
 
-    fetch('/getbusinesses', init)
+    fetch('api/getbusinesses', init)
       .then(response => response.json())
       .then(() => {
       })

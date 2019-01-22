@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 let businesses = [];
 
-app.post('/getbusinesses', (req, res)=>{  
+app.post('api/getbusinesses', (req, res)=>{  
     businesses = [];
     rapid.call('YelpAPI', 'getBusinesses', {
         'accessToken': process.env.RAPID_API_KEY,
@@ -34,13 +34,13 @@ app.post('/getbusinesses', (req, res)=>{
     });
 });
 
-app.get('/results', (req, res) =>{
+app.get('api/results', (req, res) =>{
     res.json(businesses);
 });
 
 ///////// GET Businesses Reviews ///////////
 
-app.post('/getbusinessreviews', (req, res) => {
+app.post('api/getbusinessreviews', (req, res) => {
     rapid
       .call("YelpAPI", "getBusinessReviews", {
         accessToken: process.env.RAPID_API_KEY,

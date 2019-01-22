@@ -32,7 +32,7 @@ class Results extends Component {
   }
   
   componentDidMount() {
-    fetch('/results')
+    fetch('api/results')
     .then(response => response.json())
     .then((data) => {       
       if (data.businesses[0]){

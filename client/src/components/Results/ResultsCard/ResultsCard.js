@@ -20,7 +20,7 @@ export default class ResultCard extends Component {
         'content-type': 'application/json'
       }
     };
-    fetch('api/getbusinessreviews', init)
+    fetch('/getbusinessreviews', init)
       .then(response => response.json())
       .then((data) => {
         this.setState({

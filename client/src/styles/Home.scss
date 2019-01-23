@@ -40,7 +40,7 @@ $backgroundColor: #fafafa;
 .main {
     justify-content: center;
     align-items: center;
-    background-image: url(/static/media/Soccer.e79497d6.png);
+    background-image: url('../Soccer.png');
     background-size: 100%;
     object-fit: contain;
     width: 100%;
@@ -71,7 +71,6 @@ $backgroundColor: #fafafa;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin-left: 5rem;
         h4 {
             font-size: 1rem;
             padding-bottom: 0.5rem;
@@ -102,7 +101,6 @@ $backgroundColor: #fafafa;
         }
     }
     .btns {
-        margin-left: 5rem;
         padding-bottom: 2rem;
         .submit-btn {
             @include btn();

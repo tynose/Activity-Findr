@@ -12,7 +12,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-require('dotenv').config();
 
 // serves static files from build folder
 

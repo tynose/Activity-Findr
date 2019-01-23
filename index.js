@@ -7,6 +7,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 8080;
 const rapid = new RapidAPI("default-application_5beda1abe4b0d1763ed6f67c", "fd1b0b7e-80a5-4887-9c1d-dd5af98e1ad6");
 
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
@@ -59,7 +60,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.listen(PORT, (err) => {
     if (err) {

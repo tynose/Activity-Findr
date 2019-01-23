@@ -22,7 +22,7 @@ let businesses = [];
 app.post('/getbusinesses', (req, res)=>{  
     businesses = [];
     rapid.call('YelpAPI', 'getBusinesses', {
-        'accessToken': process.env.RAPID_API_KEY,
+      'accessToken': 'FlvnN46hij2ovHvyn1GqRMwl5TrGhHvq3hquKB-oBO_CNJxDbjA4qT2rojhqknM7kgn-1ec6HDamXIKhihz1cKpS4XA0I6K4LGMA2lKcBkHnqnxgs-g8HjJlqpntW3Yx',
         ...req.body
         
         
@@ -42,7 +42,7 @@ app.get('/results', (req, res) =>{
 app.post('/getbusinessreviews', (req, res) => {
     rapid
     .call("YelpAPI", "getBusinessReviews", {
-        accessToken: process.env.RAPID_API_KEY,
+      accessToken: 'FlvnN46hij2ovHvyn1GqRMwl5TrGhHvq3hquKB-oBO_CNJxDbjA4qT2rojhqknM7kgn-1ec6HDamXIKhihz1cKpS4XA0I6K4LGMA2lKcBkHnqnxgs-g8HjJlqpntW3Yx',
         ...req.body
     })
     .on("success", payload => {

@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 require('dotenv').config();
 const rapid = new RapidAPI(process.env.DEFAULT_APP, process.env.ACCESS_TOKEN);
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
